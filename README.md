@@ -1,3 +1,3 @@
-# joao nuno mota
+# João Nuno Mota
 
 My online portfolio.
