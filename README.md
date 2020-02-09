@@ -1,4 +1,4 @@
-# joaonunomota.github.io
+# João Nuno Mota
 
 ## Project setup
 ```
