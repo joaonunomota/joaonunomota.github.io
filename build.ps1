@@ -1,15 +1,12 @@
-#! /usr/bin/pwsh
+Set-StrictMode -Version latest
+$ErrorActionPreference = "Stop"
 
-# abort on errors
-Set-Variable -e
-
-# build
+# npm install
 npm run build
 
-# navigate into the build output directory
 Set-Location dist
 
-Write-Output 'www.example.com' > CNAME
+Write-Output 'joaonunomota.com' > CNAME
 
 git init
 git add -A
@@ -17,4 +14,4 @@ git commit -m 'Deploy'
 
 git push -f git@github.com:joaonunomota/joaonunomota.github.io.git master
 
-Set-Location -
+Set-Location ..
