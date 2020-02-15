@@ -4,8 +4,8 @@
     <p>Coming soon.</p>
   </div>
 </template>
-<style scoped>
-@import "assets/css/site.scss";
+<style lang="scss">
+@import "./assets/css/site.scss";
 
 #app {
   text-align: center;
