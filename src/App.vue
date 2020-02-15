@@ -4,16 +4,11 @@
     <p>Coming soon.</p>
   </div>
 </template>
-<style scoped>
+<style lang="scss">
+@import "./assets/css/site.scss";
+
 #app {
   text-align: center;
-  color: #2c3e50;
   margin-top: 60px;
-}
-h1 {
-  font-family: "Libre Baskerville", serif;
-}
-p {
-  font-family: "Open Sans", sans-serif;
 }
 </style>
