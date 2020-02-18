@@ -1,7 +1,7 @@
 <template>
   <div>
     <div id="header" @click="toggleIsHidden">
-      <slot name="header"></slot>
+      <slot name="header" :isOpen="!isHidden"></slot>
     </div>
     <div id="body" :hidden="isHidden">
       <slot name="body"></slot>
