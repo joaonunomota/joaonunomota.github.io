@@ -1,8 +1,8 @@
 <template>
   <base-social-link
-    href="https://github.com/joaonunomota"
-    src="./github.svg"
-    alt="Github"
+    href="https://www.linkedin.com/in/joão-nuno-mota-920134195/"
+    src="./linkedin.svg"
+    alt="LinkedIn"
   />
 </template>
 
@@ -10,7 +10,7 @@
 import BaseSocialLink from "./BaseSocialLink";
 
 export default {
-  name: "github-social-link",
+  name: "linkedin-social-link",
   components: {
     BaseSocialLink
   }
