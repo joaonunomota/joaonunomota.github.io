@@ -10,9 +10,8 @@
 import BaseSocialLink from "./BaseSocialLink";
 
 export default {
-  name: "instagram-social-link",
   components: {
-    "base-social-link": BaseSocialLink
+    BaseSocialLink
   }
 };
 </script>

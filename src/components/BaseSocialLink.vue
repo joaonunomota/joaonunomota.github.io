@@ -8,7 +8,6 @@
 
 <script>
 export default {
-  name: "base-social-link",
   props: {
     href: String,
     src: String,

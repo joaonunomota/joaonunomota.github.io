@@ -10,7 +10,6 @@
 import BaseSocialLink from "./BaseSocialLink";
 
 export default {
-  name: "github-social-link",
   components: {
     BaseSocialLink
   }
