@@ -11,7 +11,7 @@
 
 <script>
 export default {
-  name: "base-accordian",
+  name: "base-accordion",
   props: {
     open: Boolean
   },
@@ -27,3 +27,9 @@ export default {
   }
 };
 </script>
+
+<style lang="scss">
+#header {
+  cursor: pointer;
+}
+</style>
