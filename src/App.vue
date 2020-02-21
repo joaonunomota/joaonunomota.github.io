@@ -9,6 +9,10 @@
           header="Miscellaneous"
         ></simple-header-accordion>
       </div>
+      <div>
+        <github-social-link class="social-icon" />
+        <linked-in-social-link class="social-icon" />
+      </div>
     </div>
   </div>
 </template>
