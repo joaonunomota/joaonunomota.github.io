@@ -14,10 +14,14 @@
 </template>
 
 <script>
+import GithubSocialLink from "./components/GithubSocialLink";
+import LinkedInSocialLink from "./components/LinkedInSocialLink";
 import SimpleHeaderAccordion from "./components/SimpleHeaderAccordion";
 
 export default {
   components: {
+    GithubSocialLink,
+    LinkedInSocialLink,
     SimpleHeaderAccordion
   }
 };
@@ -39,5 +43,11 @@ export default {
   width: 100%;
   max-width: 720px;
   padding: 0 2rem 0 2rem;
+}
+
+.social-icon {
+  display: inline-block;
+  margin: 12px;
+  height: 60px;
 }
 </style>
