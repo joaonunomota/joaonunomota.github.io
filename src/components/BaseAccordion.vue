@@ -11,7 +11,6 @@
 
 <script>
 export default {
-  name: "base-accordion",
   props: {
     open: Boolean
   },
