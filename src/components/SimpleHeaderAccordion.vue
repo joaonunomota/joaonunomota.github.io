@@ -1,9 +1,9 @@
 <template>
-  <base-accordion open>
+  <base-accordion>
     <template v-slot:header="{ isOpen }">
       <div class="header">
         <h2>
-          {{ header }}<span class="symbol">{{ isOpen ? "+" : "-" }}</span>
+          {{ header }}<span class="symbol">{{ isOpen ? "-" : "+" }}</span>
         </h2>
       </div>
     </template>
