@@ -88,7 +88,7 @@
               <strong>Web Developer</strong>
               <br />
               Augusto de Oliveira Ferreira Lda. -
-              <a href="https://www.aof.pt">aof.pt</a>
+              <a href="http://www.aof.pt">aof.pt</a>
             </div>
             <div class="right-align">
               June 2015 - September 2016
