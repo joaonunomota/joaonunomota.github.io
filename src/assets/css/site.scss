@@ -1,9 +1,10 @@
 @import "./light.scss";
 @import "./dark.scss";
 
-h1 {
+h1,
+h2 {
   font-family: "Libre Baskerville", serif;
 }
-p {
+* {
   font-family: "Open Sans", sans-serif;
 }
