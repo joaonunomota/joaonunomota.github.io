@@ -4,6 +4,8 @@ $ErrorActionPreference = "Stop"
 # npm install
 npm run build
 
+Copy-Item ".\_config.yml" -Destination ".\dist"
+
 Set-Location dist
 
 Write-Output 'joaonunomota.com' > CNAME
