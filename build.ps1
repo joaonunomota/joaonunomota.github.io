@@ -1,6 +1,10 @@
 Set-StrictMode -Version latest
 $ErrorActionPreference = "Stop"
 
+git reset --hard
+git checkout dev
+git pull
+
 # npm install
 npm run build
 
