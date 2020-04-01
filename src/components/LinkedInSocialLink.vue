@@ -1,6 +1,6 @@
 <template>
   <base-social-link
-    href="https://www.linkedin.com/in/joão-nuno-mota-920134195/"
+    href="https://www.linkedin.com/in/joaonunomota/"
     src="./linkedin.svg"
     alt="LinkedIn"
   />
