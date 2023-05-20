@@ -4,9 +4,9 @@ import { DodecahedronGeometry } from './geometry/dodecahedron';
 import {
   BufferGeometry,
   Color,
-  DoubleSide,
   EdgesGeometry,
   Float32BufferAttribute,
+  FrontSide,
   Group,
   LineSegments,
   LineBasicMaterial,
@@ -74,18 +74,18 @@ geometry.setAttribute( 'position', new Float32BufferAttribute( [], 3 ) );
 
 const lineMaterial = new LineBasicMaterial( { color: 0xffffff, transparent: true, opacity: 0.5 } );
 const meshMaterials = [
-  new MeshPhongMaterial( { color: 0x156289, emissive: 0x072534, side: DoubleSide, flatShading: true } ),
-  new MeshPhongMaterial( { color: 0x156289, emissive: 0x072534, side: DoubleSide, flatShading: true } ),
-  new MeshPhongMaterial( { color: 0x156289, emissive: 0x072534, side: DoubleSide, flatShading: true } ),
-  new MeshPhongMaterial( { color: 0x156289, emissive: 0x072534, side: DoubleSide, flatShading: true } ),
-  new MeshPhongMaterial( { color: 0x156289, emissive: 0x072534, side: DoubleSide, flatShading: true } ),
-  new MeshPhongMaterial( { color: 0x156289, emissive: 0x072534, side: DoubleSide, flatShading: true } ),
-  new MeshPhongMaterial( { color: 0x156289, emissive: 0x072534, side: DoubleSide, flatShading: true } ),
-  new MeshPhongMaterial( { color: 0x156289, emissive: 0x072534, side: DoubleSide, flatShading: true } ),
-  new MeshPhongMaterial( { color: 0x156289, emissive: 0x072534, side: DoubleSide, flatShading: true } ),
-  new MeshPhongMaterial( { color: 0x156289, emissive: 0x072534, side: DoubleSide, flatShading: true } ),
-  new MeshPhongMaterial( { color: 0x156289, emissive: 0x072534, side: DoubleSide, flatShading: true } ),
-  new MeshPhongMaterial( { color: 0x156289, emissive: 0x072534, side: DoubleSide, flatShading: true } ),
+  new MeshPhongMaterial( { color: 0x156289, emissive: 0x072534, side: FrontSide, flatShading: true } ),
+  new MeshPhongMaterial( { color: 0x156289, emissive: 0x072534, side: FrontSide, flatShading: true } ),
+  new MeshPhongMaterial( { color: 0x156289, emissive: 0x072534, side: FrontSide, flatShading: true } ),
+  new MeshPhongMaterial( { color: 0x156289, emissive: 0x072534, side: FrontSide, flatShading: true } ),
+  new MeshPhongMaterial( { color: 0x156289, emissive: 0x072534, side: FrontSide, flatShading: true } ),
+  new MeshPhongMaterial( { color: 0x156289, emissive: 0x072534, side: FrontSide, flatShading: true } ),
+  new MeshPhongMaterial( { color: 0x156289, emissive: 0x072534, side: FrontSide, flatShading: true } ),
+  new MeshPhongMaterial( { color: 0x156289, emissive: 0x072534, side: FrontSide, flatShading: true } ),
+  new MeshPhongMaterial( { color: 0x156289, emissive: 0x072534, side: FrontSide, flatShading: true } ),
+  new MeshPhongMaterial( { color: 0x156289, emissive: 0x072534, side: FrontSide, flatShading: true } ),
+  new MeshPhongMaterial( { color: 0x156289, emissive: 0x072534, side: FrontSide, flatShading: true } ),
+  new MeshPhongMaterial( { color: 0x156289, emissive: 0x072534, side: FrontSide, flatShading: true } ),
 ];
 
 group.add( new LineSegments( geometry, lineMaterial ) );
