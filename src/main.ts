@@ -1,27 +1,31 @@
 import './style.css'
 
-import { DodecahedronGeometry } from './geometry/dodecahedron';
 import {
   BufferGeometry,
   Color,
   EdgesGeometry,
   Float32BufferAttribute,
-  FrontSide,
   Group,
   LineSegments,
   LineBasicMaterial,
   Mesh,
-  MeshPhongMaterial,
+  MeshBasicMaterial,
   PerspectiveCamera,
-  PointLight,
   Scene,
   WebGLRenderer
 } from 'three';
 
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 
+import { DodecahedronGeometry } from './geometry/dodecahedron';
+import { shuffle } from './utils/array';
+
+const colors = [ 0xF94144, 0xF3722C, 0xF8961E, 0xF9C74F, 0x90BE6D, 0x43AA8B, 0x577590 ];
+
+const [backgroundColor, ...meshColors] = shuffle(colors);
+
 const scene = new Scene();
-scene.background = new Color( 0x0ca5b0 );
+scene.background = new Color( backgroundColor );
 
 const camera = new PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 50 );
 camera.position.z = 30;
@@ -37,19 +41,6 @@ orbit.enableZoom = false;
 orbit.autoRotate = true;
 orbit.enableDamping = true;
 
-const lights = [];
-lights[ 0 ] = new PointLight( 0xffffff, 1, 0 );
-lights[ 1 ] = new PointLight( 0xffffff, 1, 0 );
-lights[ 2 ] = new PointLight( 0xffffff, 1, 0 );
-
-lights[ 0 ].position.set( 0, 200, 0 );
-lights[ 1 ].position.set( 100, 200, 100 );
-lights[ 2 ].position.set( - 100, - 200, - 100 );
-
-scene.add( lights[ 0 ] );
-scene.add( lights[ 1 ] );
-scene.add( lights[ 2 ] );
-
 const group = new Group();
 
 const geometry = new BufferGeometry();
@@ -57,18 +48,8 @@ geometry.setAttribute( 'position', new Float32BufferAttribute( [], 3 ) );
 
 const lineMaterial = new LineBasicMaterial( { color: 0xffffff, transparent: true, opacity: 0.5 } );
 const meshMaterials = [
-  new MeshPhongMaterial( { color: 0x156289, emissive: 0x072534, side: FrontSide, flatShading: true } ),
-  new MeshPhongMaterial( { color: 0x156289, emissive: 0x072534, side: FrontSide, flatShading: true } ),
-  new MeshPhongMaterial( { color: 0x156289, emissive: 0x072534, side: FrontSide, flatShading: true } ),
-  new MeshPhongMaterial( { color: 0x156289, emissive: 0x072534, side: FrontSide, flatShading: true } ),
-  new MeshPhongMaterial( { color: 0x156289, emissive: 0x072534, side: FrontSide, flatShading: true } ),
-  new MeshPhongMaterial( { color: 0x156289, emissive: 0x072534, side: FrontSide, flatShading: true } ),
-  new MeshPhongMaterial( { color: 0x156289, emissive: 0x072534, side: FrontSide, flatShading: true } ),
-  new MeshPhongMaterial( { color: 0x156289, emissive: 0x072534, side: FrontSide, flatShading: true } ),
-  new MeshPhongMaterial( { color: 0x156289, emissive: 0x072534, side: FrontSide, flatShading: true } ),
-  new MeshPhongMaterial( { color: 0x156289, emissive: 0x072534, side: FrontSide, flatShading: true } ),
-  new MeshPhongMaterial( { color: 0x156289, emissive: 0x072534, side: FrontSide, flatShading: true } ),
-  new MeshPhongMaterial( { color: 0x156289, emissive: 0x072534, side: FrontSide, flatShading: true } ),
+  ...meshColors.map(color => new MeshBasicMaterial( { color } )),
+  ...meshColors.map(color => new MeshBasicMaterial( { color } ))
 ];
 
 group.add( new LineSegments( geometry, lineMaterial ) );
