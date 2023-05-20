@@ -12,7 +12,6 @@ import {
   LineBasicMaterial,
   Mesh,
   MeshPhongMaterial,
-  NormalBufferAttributes,
   PerspectiveCamera,
   PointLight,
   Scene,
@@ -20,22 +19,6 @@ import {
 } from 'three';
 
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
-
-function updateGroupGeometry( mesh: Group, geometry: BufferGeometry<NormalBufferAttributes> ) {
-
-  mesh.children[ 0 ].geometry.dispose();
-  mesh.children[ 1 ].geometry.dispose();
-
-  mesh.children[ 0 ].geometry = new EdgesGeometry( geometry );
-  mesh.children[ 1 ].geometry = geometry;
-
-}
-
-function dodecahedronGeometry( mesh: Group ) {
-
-  updateGroupGeometry( mesh, new DodecahedronGeometry( 15, 0 ) );
-
-}
 
 const scene = new Scene();
 scene.background = new Color( 0x0ca5b0 );
@@ -91,7 +74,13 @@ const meshMaterials = [
 group.add( new LineSegments( geometry, lineMaterial ) );
 group.add( new Mesh( geometry, meshMaterials ) );
 
-dodecahedronGeometry( group );
+group.children[ 0 ].geometry.dispose();
+group.children[ 1 ].geometry.dispose();
+
+const docecahedron = new DodecahedronGeometry(15, 0);
+
+group.children[ 0 ].geometry = new EdgesGeometry( docecahedron );
+group.children[ 1 ].geometry = docecahedron;
 
 scene.add( group );
 
