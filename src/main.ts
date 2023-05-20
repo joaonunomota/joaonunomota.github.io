@@ -1,9 +1,9 @@
 import './style.css'
 
+import { DodecahedronGeometry } from './geometry/dodecahedron';
 import {
   BufferGeometry,
   Color,
-  DodecahedronGeometry,
   DoubleSide,
   EdgesGeometry,
   Float32BufferAttribute,
@@ -73,10 +73,23 @@ const geometry = new BufferGeometry();
 geometry.setAttribute( 'position', new Float32BufferAttribute( [], 3 ) );
 
 const lineMaterial = new LineBasicMaterial( { color: 0xffffff, transparent: true, opacity: 0.5 } );
-const meshMaterial = new MeshPhongMaterial( { color: 0x156289, emissive: 0x072534, side: DoubleSide, flatShading: true } );
+const meshMaterials = [
+  new MeshPhongMaterial( { color: 0x156289, emissive: 0x072534, side: DoubleSide, flatShading: true } ),
+  new MeshPhongMaterial( { color: 0x156289, emissive: 0x072534, side: DoubleSide, flatShading: true } ),
+  new MeshPhongMaterial( { color: 0x156289, emissive: 0x072534, side: DoubleSide, flatShading: true } ),
+  new MeshPhongMaterial( { color: 0x156289, emissive: 0x072534, side: DoubleSide, flatShading: true } ),
+  new MeshPhongMaterial( { color: 0x156289, emissive: 0x072534, side: DoubleSide, flatShading: true } ),
+  new MeshPhongMaterial( { color: 0x156289, emissive: 0x072534, side: DoubleSide, flatShading: true } ),
+  new MeshPhongMaterial( { color: 0x156289, emissive: 0x072534, side: DoubleSide, flatShading: true } ),
+  new MeshPhongMaterial( { color: 0x156289, emissive: 0x072534, side: DoubleSide, flatShading: true } ),
+  new MeshPhongMaterial( { color: 0x156289, emissive: 0x072534, side: DoubleSide, flatShading: true } ),
+  new MeshPhongMaterial( { color: 0x156289, emissive: 0x072534, side: DoubleSide, flatShading: true } ),
+  new MeshPhongMaterial( { color: 0x156289, emissive: 0x072534, side: DoubleSide, flatShading: true } ),
+  new MeshPhongMaterial( { color: 0x156289, emissive: 0x072534, side: DoubleSide, flatShading: true } ),
+];
 
 group.add( new LineSegments( geometry, lineMaterial ) );
-group.add( new Mesh( geometry, meshMaterial ) );
+group.add( new Mesh( geometry, meshMaterials ) );
 
 dodecahedronGeometry( group );
 
