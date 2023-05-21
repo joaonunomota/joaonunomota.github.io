@@ -46,13 +46,15 @@ export const render = () => {
     group.add(new LineSegments(geometry, lineMaterial));
     group.add(new Mesh(geometry, meshMaterials));
 
-    group.children[0].geometry.dispose();
-    group.children[1].geometry.dispose();
+    const meshes = group.children as Mesh[];
+
+    meshes[0].geometry.dispose();
+    meshes[1].geometry.dispose();
 
     const docecahedron = new DodecahedronGeometry(15, 0);
 
-    group.children[0].geometry = new EdgesGeometry(docecahedron);
-    group.children[1].geometry = docecahedron;
+    meshes[0].geometry = new EdgesGeometry(docecahedron);
+    meshes[1].geometry = docecahedron;
 
     scene.add(group);
 
