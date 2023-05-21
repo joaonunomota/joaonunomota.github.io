@@ -15,8 +15,6 @@ import {
   WebGLRenderer
 } from 'three';
 
-import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
-
 import { DodecahedronGeometry } from './geometry/dodecahedron';
 import { shuffle } from './utils/array';
 
@@ -34,12 +32,6 @@ const renderer = new WebGLRenderer( { antialias: true } );
 renderer.setPixelRatio( window.devicePixelRatio );
 renderer.setSize( window.innerWidth, window.innerHeight );
 document.body.appendChild( renderer.domElement );
-
-const orbit = new OrbitControls( camera, renderer.domElement );
-orbit.enablePan = false;
-orbit.enableZoom = false;
-orbit.autoRotate = true;
-orbit.enableDamping = true;
 
 const group = new Group();
 
@@ -67,9 +59,10 @@ scene.add( group );
 
 function render() {
 
-  orbit.update();
-
   requestAnimationFrame( render );
+
+  group.rotation.x += 0.002;
+  group.rotation.y += 0.002;
 
   renderer.render( scene, camera );
 
